@@ -1,0 +1,29 @@
+version: "3"
+services:
+  api:
+    container_name: quiz-api
+    image: node:14
+    ports:
+      - 5000:5000
+    environment:
+      - CONNECTION_URL=mongodb+srv://user:pass@cluster1.knsgipg.mongodb.net/quizNight22?retryWrites=true&w=majority
+      - DATABASE_NAME=quizNight22
+    depends_on: 
+      - db
+    command: bash -c "npm install && npm start"  
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+  db:
+    container_name: quiz-db
+    image: mongo:latest
+    volumes: 
+      - "dbdata:/var/lib/mongodb/data"
+      - "./db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_DATABASE=quizNight22
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+volumes:
+  dbdata:
