@@ -4,8 +4,8 @@
   "description": "a quiz built with node backend",
   "main": "api/app.js",
   "scripts": {
-    "start": "nodemon ./api/index.js",
-    "dev": "nodemon app.js",
+    "start": "node ./api/index.js",
+    "start-dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
