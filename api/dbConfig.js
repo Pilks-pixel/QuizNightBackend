@@ -1,12 +1,12 @@
 const { MongoClient } = require('mongodb')
 
-  // const connectionUrl = process.env.CONNECTION_URL
- const uri = process.env.MONGODB_URI;
+  const connectionUrl = process.env.CONNECTION_URL;
+//  const uri = process.env.MONGODB_URI || process.env.CONNECTION_URL;
   const dbName = process.env.DATABASE_NAME;
 
 
 const init = async () => {
-  let client = await MongoClient.connect(uri)
+  let client = await MongoClient.connect(connectionUrl)
   // return MongoClient.connect(connectionUrl).then((client) => {
   //   db = client.db(dbName)
 
