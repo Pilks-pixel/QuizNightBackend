@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
 const leaderRoutes = require('./routes/leaderBoard');
 app.use('/leaderBoard', leaderRoutes);
 
+// Server
+const port = process.env.PORT || 3000;
 
+app.listen(port, () => {
+    console.log(`Express listening on http://localhost:${port}!`)
+});
 
 module.exports = app;

@@ -4,7 +4,7 @@
   "description": "a quiz built with node backend",
   "main": "api/app.js",
   "scripts": {
-    "start": "node ./api/index.js",
+    "start": "node ./api/app.js",
     "start-dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,10 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
-    "mongoose": "^6.5.2",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.16"
   }
+  
 }
