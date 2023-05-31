@@ -17,9 +17,10 @@ app.get('/', (req, res) => {
     res.status(200).send('Hello World!')
   })
 
+
 const leaderRoutes = require('./routes/leaderBoard');
 app.use('/leaderBoard', leaderRoutes);
 
-  
+
 
 module.exports = app;
